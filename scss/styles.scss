@@ -1,15 +1,15 @@
+@use "variable" as v;
 @import url('reset');
 
-$color-red: rgb(226, 25, 25);
-$color-peach: rgba(255, 215, 185, 0.91) 23%;
-$color-purple: rgba(223, 159, 247, 0.8) 93%;
-
+//Mixins
+@mixin gradienta ($deg: 100deg) {
+  background: linear-gradient($deg v.$color-peach,
+      v.$color-purple);
+}
 
 body {
   font-family: "Teachers", sans-serif;
-  background: linear-gradient(106.5deg,
-      $color-peach,
-      $color-purple );
+  @include gradienta();
 
   animation: {
     name: golgol;
@@ -21,33 +21,33 @@ body {
 }
 
 ::selection {
-  background: $color-red;
+  background: v.$color-red;
   color: white;
 }
 
 @keyframes golgol {
   0% {
     background: linear-gradient(20deg,
-        rgba(185, 191, 255, 0.91) 23%,
-        rgba(197, 159, 247, 0.8) 93%);
+        v.$color-peach,
+        v.$color-purple);
   }
 
   25% {
     background: linear-gradient(80deg,
-        hsla(26, 100%, 86%, 0.91) 23%,
-        rgba(7, 214, 80, 0.41) 93%);
+        v.$color-peach ,
+        v.$color-purple);
   }
 
   50% {
     background: linear-gradient(120deg,
-        rgba(154, 179, 13, 0) 23%,
-        rgba(196, 115, 226, 0.8) 93%);
+        v.$color-peach,
+        v.$color-purple);
   }
 
   100% {
     background: linear-gradient(160deg,
-        rgba(255, 215, 185, 0.91) 23%,
-        rgba(223, 159, 247, 0.8) 93%);
+        v.$color-peach,
+        v.$color-purple),
   }
 }
 
@@ -129,14 +129,16 @@ aside {
   grid-column: 2;
   grid-row: 1 / -1;
   padding-right: 10vw;
+
+  video {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+  }
 }
 
-video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  border-radius: 20px;
-}
+
 
 /* 
     MARK: Responsive
