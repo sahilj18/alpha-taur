@@ -1,54 +1,53 @@
 @import url('reset');
 
+$color-red: rgb(226, 25, 25);
+$color-peach: rgba(255, 215, 185, 0.91) 23%;
+$color-purple: rgba(223, 159, 247, 0.8) 93%;
+
+
 body {
   font-family: "Teachers", sans-serif;
-  background: linear-gradient(
-    106.5deg,
-    rgba(255, 215, 185, 0.91) 23%,
-    rgba(223, 159, 247, 0.8) 93%
-  );
-  animation:{
-  name: golgol;
-  duration: 5s;
-  iterationcount: infinite;
-  timing-function: ease;
+  background: linear-gradient(106.5deg,
+      $color-peach,
+      $color-purple );
+
+  animation: {
+    name: golgol;
+    duration: 5s;
+    iteration-count: infinite;
+    timing-function: ease;
 
   }
 }
 
 ::selection {
-  background: red;
+  background: $color-red;
   color: white;
 }
 
 @keyframes golgol {
   0% {
-    background: linear-gradient(
-      20deg,
-      rgba(185, 191, 255, 0.91) 23%,
-      rgba(197, 159, 247, 0.8) 93%
-    );
+    background: linear-gradient(20deg,
+        rgba(185, 191, 255, 0.91) 23%,
+        rgba(197, 159, 247, 0.8) 93%);
   }
+
   25% {
-    background: linear-gradient(
-      80deg,
-      rgba(255, 215, 185, 0.91) 23%,
-      rgba(118, 6, 6, 0.8) 93%
-    );
+    background: linear-gradient(80deg,
+        hsla(26, 100%, 86%, 0.91) 23%,
+        rgba(7, 214, 80, 0.41) 93%);
   }
+
   50% {
-    background: linear-gradient(
-      120deg,
-      rgba(136, 65, 10, 0.91) 23%,
-      rgba(107, 19, 139, 0.8) 93%
-    );
+    background: linear-gradient(120deg,
+        rgba(154, 179, 13, 0) 23%,
+        rgba(196, 115, 226, 0.8) 93%);
   }
+
   100% {
-    background: linear-gradient(
-      160deg,
-      rgba(255, 215, 185, 0.91) 23%,
-      rgba(223, 159, 247, 0.8) 93%
-    );
+    background: linear-gradient(160deg,
+        rgba(255, 215, 185, 0.91) 23%,
+        rgba(223, 159, 247, 0.8) 93%);
   }
 }
 
@@ -71,38 +70,41 @@ aside {
 header {
   display: flex;
   justify-content: space-between;
+
   .logo {
     height: 20px;
     width: 20px;
     background: black;
     transform: rotate(45deg);
     transition: 0.5s ease;
-  
-  &:hover {
-    cursor: pointer;
-    transform: rotate(90deg);
-    border-radius: 6px;
+
+    &:hover {
+      cursor: pointer;
+      transform: rotate(90deg);
+      border-radius: 6px;
+    }
   }
-}
-ul {
-  list-style: none;
-  text-align: right;
-  color: red;
-  cursor: pointer;
-}
-li:first-child {
-  font-weight: 600;
-  margin-bottom: 25px;
-  color: black;
-  font-size: 20px;
-}
+
+  ul {
+    list-style: none;
+    text-align: right;
+    color: red;
+    cursor: pointer;
+  }
+
+  li:first-child {
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: black;
+    font-size: 20px;
+  }
 }
 
 
 
 
 /*mark  Main */
-main{
+main {
   h1 {
     font-size: 70px;
     font-weight: 400;
@@ -114,6 +116,7 @@ main{
 /* Footer */
 footer {
   align-self: center;
+
   p {
     font-size: 12px;
     width: 80%;
@@ -143,13 +146,16 @@ video {
     grid-template-columns: 100%;
     grid-template-rows: 25% 30% 15% 30%;
   }
+
   h1 {
     font-size: 50px;
     font-weight: 500;
   }
+
   footer p {
     width: 100%;
   }
+
   aside {
     grid-row: 4;
     grid-column: 1;
